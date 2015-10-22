@@ -1,0 +1,69 @@
+// CTracker.odl : type library source for ActiveX Control project.
+
+// This file will be processed by the Make Type Library (mktyplib) tool to
+// produce the type library (CTracker.tlb) that will become a resource in
+// CTracker.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(A4D782AB-D4C8-11D4-8270-00C0F057D251), version(1.0),
+  helpfile("CTracker.hlp"),
+  helpstring("CTracker ActiveX Control module"),
+  control ]
+library CTRACKERLib
+{
+	importlib(STDOLE_TLB);
+	importlib(STDTYPE_TLB);
+
+	//  Primary dispatch interface for CCTrackerCtrl
+
+	[ uuid(A4D782AC-D4C8-11D4-8270-00C0F057D251),
+	  helpstring("Dispatch interface for CTracker Control"), hidden ]
+	dispinterface _DCTracker
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CCTrackerCtrl)
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CCTrackerCtrl)
+			//}}AFX_ODL_METHOD
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  Event dispatch interface for CCTrackerCtrl
+
+	[ uuid(A4D782AD-D4C8-11D4-8270-00C0F057D251),
+	  helpstring("Event interface for CTracker Control") ]
+	dispinterface _DCTrackerEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CCTrackerCtrl)
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CCTrackerCtrl
+
+	[ uuid(A4D782AE-D4C8-11D4-8270-00C0F057D251),
+	  helpstring("CTracker Control"), control ]
+	coclass CTracker
+	{
+		[default] dispinterface _DCTracker;
+		[default, source] dispinterface _DCTrackerEvents;
+	};
+
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};
